@@ -16,7 +16,6 @@ public class UserController {
     @GetMapping("/info")
     public User getUserDetails(){
         String userName = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
         return userRepo.findByUsername(userName).get();
     }
 }
